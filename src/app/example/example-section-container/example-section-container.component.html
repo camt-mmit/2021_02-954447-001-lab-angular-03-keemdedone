@@ -1,0 +1,13 @@
+<div>
+  <button type="button" (click)="addInput()">Add</button>
+</div>
+<div>
+  <ng-container *ngFor="let item of items; let i = index;">
+    <label for="">
+      <b>Input {{ i+1 }}</b>
+      <app-example-input-container [value]="item.value" (update)="onUpdate(i,$event)"></app-example-input-container>
+      <button type="button" (click)="delInput(i)" [disabled]="items?.length === 1">Delete</button> <!-- (?) is NULL safe -->
+    </label>
+    <br>
+  </ng-container>
+</div>

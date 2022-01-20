@@ -1,0 +1,17 @@
+<div>
+  <button type="button" (click)="dataService.addSection()">Add Section</button>
+</div>
+<div *ngFor="let items of dataService.getData() as data ; let i = index;">
+  <div>
+    <h3>Section {{ i+1 }}</h3>
+    <button type="button" (click)="dataService.removeSection(i)" [disabled]="data.length === 1">Remove Section</button>
+  <div>
+  <app-example-section-container
+  [items]="items"
+  (update)="dataService.updateItem(i,$event.index,$event.value)"
+  (add)="dataService.addItem(i)"
+  (delete)="dataService.removeItem(i, $event)"></app-example-section-container>
+</div>
+<code>
+  {{ dataService.getData() | json }}
+</code>

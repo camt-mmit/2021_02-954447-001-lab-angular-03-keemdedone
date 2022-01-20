@@ -1,0 +1,7 @@
+<h2>Display Section {{ getSectionIndex() + 1 }}</h2>
+<div>
+  <ng-container *ngFor="let item of getItems(); let i = index;">
+    <b>input {{ i+1 }} : </b><span>{{ item.value }}</span>
+    <br>
+  </ng-container>
+</div>
