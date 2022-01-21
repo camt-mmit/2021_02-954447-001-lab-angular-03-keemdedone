@@ -54,3 +54,23 @@ html{
 input[type="number"]{
   font-family: monospace;
 }
+
+.input-display{
+  &>a{
+    text-decoration: none;
+    font-size: 20px;
+  }
+  &>a::after{
+    content: " = ";
+    font-style: bold;
+    font-size: 20;
+    color: red;
+  }
+  &>span{
+    font-family: monospace;
+    font-size: 22px;
+  }
+  &>b{
+    font-size: 18px;
+  }
+}

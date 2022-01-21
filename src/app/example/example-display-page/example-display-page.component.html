@@ -1,7 +1,7 @@
 <h3>Display</h3>
-<div>
+<div class="input-display">
   <ng-container *ngFor="let items of dataService.getData(); let i = index">
-    <a [routerLink]="[i]"> Section {{ i+1 }}: {{ display(items) }} </a>
+    <a [routerLink]="[i]"> Section {{ i+1 }}</a><span>{{ display(items) }}</span>
     <br>
   </ng-container>
 </div>
