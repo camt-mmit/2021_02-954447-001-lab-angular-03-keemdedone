@@ -1,5 +1,5 @@
 <div>
-  <button type="button" (click)="dataService.addSection()" class="cmd-button">
+  <button type="button" (click)="dataService.addSection()" class="cmd-button-add">
     <i class="material-icons">
       add
     </i>
@@ -8,15 +8,15 @@
 </div>
 <div *ngFor="let items of dataService.getData() as data ; let i = index;">
   <div>
-    <h3>
+    <h2>
       Section {{ i+1 }}
-      <button type="button" (click)="dataService.removeSection(i)" [disabled]="data.length === 1" class="cmd-button">
+      <button type="button" (click)="dataService.removeSection(i)" [disabled]="data.length === 1" class="cmd-button-del">
         <i class="material-icons">
           delete_forever
         </i>
         <a>Delete</a>
       </button>
-    </h3>
+    </h2>
   <div>
   <app-example-section-container
   [items]="items"

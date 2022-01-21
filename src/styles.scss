@@ -16,21 +16,41 @@ html{
     &>li{
       display: inline-block;
       padding: 4px;
-    }
-  }
 
-  &>a{
-    color: blue;
-    text-decoration: none;
+      &>a{
+        color: blue;
+        text-decoration: none;
+      }
+    }
   }
 }
 
-.cmd-button{
+.cmd-button-del{
   &>i{
     vertical-align: -0.18ch;
+    color: red;
   }
   &>a{
     font-size: 20px;
   }
+}
 
+.cmd-button-add{
+  &>i{
+    vertical-align: -0.18ch;
+    color: blue;
+  }
+  &>a{
+    font-size: 20px;
+  }
+}
+
+.input-container>b::after{
+  content: " >> ";
+  color: blue;
+  font-style: bold;
+}
+
+input[type="number"]{
+  font-family: monospace;
 }
