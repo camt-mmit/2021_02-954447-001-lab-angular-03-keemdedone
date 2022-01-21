@@ -1,4 +1,4 @@
-<h3>Display</h3>
+<h2>All Section Result</h2>
 <div class="input-display">
   <ng-container *ngFor="let items of dataService.getData(); let i = index">
     <a [routerLink]="[i]"> Section {{ i+1 }}</a><span>{{ display(items) }}</span>
