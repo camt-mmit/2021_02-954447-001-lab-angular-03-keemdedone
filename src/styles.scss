@@ -26,6 +26,7 @@ html{
 }
 
 .cmd-button-del{
+  margin-left: 2ch;
   &>i{
     vertical-align: -0.18ch;
     color: red;
@@ -49,6 +50,7 @@ html{
   content: " >> ";
   color: blue;
   font-style: bold;
+  padding: 0ch 1.5ch 0ch 1ch;
 }
 
 input[type="number"]{
