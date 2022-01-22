@@ -9,18 +9,28 @@ html{
 
 .cmp-nav{
   display: block;
+
   &>ul{
     display: block;
     list-style: none;
 
     &>li{
       display: inline-block;
-      padding: 4px;
+      padding: 4px 10px 4px 10px;
+      margin-right: 1.5ch;
+      border: 2px solid blue;
 
       &>a{
         color: blue;
         text-decoration: none;
+        font-size: 20px;
+
       }
+    }
+
+    &>li:hover{
+      background-color: skyblue;
+      color: aliceblue;
     }
   }
 }
@@ -31,6 +41,7 @@ html{
     vertical-align: -0.18ch;
     color: red;
   }
+
   &>a{
     font-size: 20px;
   }
