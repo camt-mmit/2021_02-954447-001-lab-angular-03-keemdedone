@@ -13,7 +13,7 @@ const routes: Routes = [
     children: [
       {
         path:'',
-        redirectTo:'input',
+        redirectTo:'input', //if nothing URL it will back to input path
         pathMatch:'full'
       },
       {
