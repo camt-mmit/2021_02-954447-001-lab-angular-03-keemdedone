@@ -18,19 +18,18 @@ html{
       display: inline-block;
       padding: 4px 10px 4px 10px;
       margin-right: 1.5ch;
-      border: 2px solid blue;
-
       &>a{
         color: blue;
         text-decoration: none;
         font-size: 20px;
-
       }
-    }
-
-    &>li:hover{
-      background-color: skyblue;
-      color: aliceblue;
+      &>a:hover{
+        color: black;
+        text-decoration: underline;
+      }
+      &>a:active{
+        color: blue;
+      }
     }
   }
 }
@@ -107,14 +106,28 @@ input[type="number"]{
   }
   &>button{
     margin-bottom: 1em;
+    &>i{
+      color: blue;
+    }
   }
   &>.cmp-slibings-box{
-    &>b::after{
-      content: ". ";
+    &>b{
+      margin-top: 0.5em;
+    }
+    &>button{
+      color: red;
+    }
+    &>button:disabled{
+      color: gray;
     }
     display: grid;
     grid-template-columns: 3ch 7cm 5ch;
   }
+}
+
+.st-active{
+  text-decoration: underline;
+  color: red;
 }
 
 
