@@ -87,3 +87,34 @@ input[type="number"]{
     font-size: 18px;
   }
 }
+
+.cmp-simple-form{
+  display: grid;
+  grid-template-columns: 8ch 10cm 1fr;
+  &>select{
+    text-align-last:center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    font-weight: bold;
+  }
+}
+
+.cmp-slibings-container{
+  display: table;
+  padding: 1em 0em 0em 0em;
+  &>b{
+    vertical-align: 0.4em;
+  }
+  &>button{
+    margin-bottom: 1em;
+  }
+  &>.cmp-slibings-box{
+    &>b::after{
+      content: ". ";
+    }
+    display: grid;
+    grid-template-columns: 3ch 7cm 5ch;
+  }
+}
+
+
