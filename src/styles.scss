@@ -29,7 +29,13 @@ html{
         text-decoration: underline;
       }
       &>a:active{
-        color: blue;
+        color: red;
+      }
+      &>a::selection{
+        color: red;
+      }
+      .st-active{
+        color: red;
       }
     }
   }
@@ -126,10 +132,3 @@ input[type="number"]{
     }
   }
 }
-
-.st-active{
-  text-decoration: underline;
-  color: red;
-}
-
-
