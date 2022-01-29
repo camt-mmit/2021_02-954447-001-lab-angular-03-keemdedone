@@ -1,5 +1,5 @@
-<div>
-  <button type="button" (click)="dataService.addSection()" class="cmd-button-add">
+<div class="input-container">
+  <button type="button" (click)="dataService.addSection()" class="example-button-add">
     <i class="material-icons">
       add
     </i>
@@ -10,7 +10,7 @@
   <div>
     <h2>
       Section {{ i+1 }}
-      <button type="button" (click)="dataService.removeSection(i)" [disabled]="data.length === 1" class="cmd-button-del">
+      <button type="button" (click)="dataService.removeSection(i)" [disabled]="data.length === 1" class="example-button-del">
         <i class="material-icons">
           delete_forever
         </i>
@@ -23,5 +23,5 @@
   (update)="dataService.updateItem(i,$event.index,$event.value)"
   (add)="dataService.addItem(i)"
   (delete)="dataService.removeItem(i, $event)"></app-example-section-container>
-  <hr>
+  <hr >
 </div>

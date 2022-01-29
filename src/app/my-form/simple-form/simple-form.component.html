@@ -27,7 +27,7 @@
     </button>
     <div *ngFor="let slibing of slibings.controls; let i = index;" class="cmp-slibings-box">
       <b>{{ i + 1 }}</b><input type="text" [formControlName]="i">
-      <button type="button" (click)="deleteSlibing(i)" [disabled]="slibings.controls.length === 1">
+      <button type="button" (click)="deleteSlibing(i)">
         <i class="material-icons">
           delete
         </i>

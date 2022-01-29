@@ -4,9 +4,10 @@ html{
   font-family: sans-serif;
   font-size: 16px;
   padding-left: 1ch;
-
+  text-align: center;
 }
 
+//Example CSS
 .cmp-nav{
   display: block;
 
@@ -34,19 +35,17 @@ html{
   }
 }
 
-.cmd-button-del{
+.example-button-del{
   margin-left: 2ch;
   &>i{
     vertical-align: -0.18ch;
     color: red;
   }
-
   &>a{
     font-size: 20px;
   }
 }
-
-.cmd-button-add{
+.example-button-add{
   &>i{
     vertical-align: -0.18ch;
     color: blue;
@@ -87,7 +86,9 @@ input[type="number"]{
   }
 }
 
+//Sample CSS
 .cmp-simple-form{
+  margin-left: 35%;
   display: grid;
   grid-template-columns: 8ch 10cm 1fr;
   &>select{
@@ -96,32 +97,33 @@ input[type="number"]{
     font-size: 1em;
     font-weight: bold;
   }
-}
-
-.cmp-slibings-container{
-  display: table;
-  padding: 1em 0em 0em 0em;
-  &>b{
-    vertical-align: 0.4em;
-  }
-  &>button{
-    margin-bottom: 1em;
-    &>i{
-      color: blue;
-    }
-  }
-  &>.cmp-slibings-box{
+  &>.cmp-slibings-container{
+    display: table;
+    padding: 1em 0em 0em 0em;
     &>b{
-      margin-top: 0.5em;
+      vertical-align: 0.4em;
     }
     &>button{
-      color: red;
+      margin-bottom: 1em;
+      &>i{
+        color: blue;
+      }
     }
-    &>button:disabled{
-      color: gray;
+    &>.cmp-slibings-box{
+
+      &>b{
+        margin: 0.5em 0em 0em 0em;
+      }
+      &>button{
+        color: red;
+      }
+      &>button:disabled{
+        color: gray;
+      }
+      padding-left: 5ch;
+      display: grid;
+      grid-template-columns: 3ch 10cm 5ch;
     }
-    display: grid;
-    grid-template-columns: 3ch 7cm 5ch;
   }
 }
 

@@ -1,17 +1,17 @@
-<div>
-  <button type="button" (click)="addInput()" class="cmd-button-add">
+<div class="section-container">
+  <button type="button" (click)="addInput()" class="example-button-add">
     <i class="material-icons">
       add_circle
     </i>
     <a>Add</a>
   </button>
 </div>
-<div>
+<div class="section-container">
   <ng-container *ngFor="let item of items; let i = index;">
     <label class="input-container">
       <b>Input {{ i+1 }}</b>
       <app-example-input-container [value]="item.value" (update)="onUpdate(i,$event)"></app-example-input-container>
-      <button type="button" (click)="delInput(i)" [disabled]="items?.length === 1" class="cmd-button-del"> <!-- (?) is NULL safe -->
+      <button type="button" (click)="delInput(i)" [disabled]="items?.length === 1" class="example-button-del"> <!-- (?) is NULL safe -->
         <i class="material-icons">
           delete
         </i>
