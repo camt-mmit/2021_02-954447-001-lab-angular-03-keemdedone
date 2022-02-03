@@ -10,6 +10,9 @@ const routes: Routes = [
   },
   {
     path:'simple-form',loadChildren: () => import('./my-form/my-form.module').then((m)=>m.MyFormModule)
+  },
+  {
+    path:'star-war',loadChildren: () => import('./star-war/star-war.module').then((m) => m.StarWarModule)
   }
 ];
 

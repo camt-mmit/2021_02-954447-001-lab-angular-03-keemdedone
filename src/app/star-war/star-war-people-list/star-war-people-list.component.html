@@ -1,0 +1,9 @@
+<div *ngIf="data; else loading" class="cmp-container"> <!-- check data null or not -->
+  <div *ngFor="let item of data.results;let i = index">
+    {{ item.name }}
+  </div>
+</div>
+
+<ng-template #loading>
+  <div>Loading.....</div>
+</ng-template>
