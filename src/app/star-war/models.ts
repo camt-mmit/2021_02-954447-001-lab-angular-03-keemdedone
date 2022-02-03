@@ -48,6 +48,20 @@ export type species = {
   edited: string // the ISO 8601 date format of the time that this resource was edited.
 }
 
+export type planet = {
+  name: string // The name of this planet.
+  diameter: string // The diameter of this planet in kilometers.
+  rotation_period: string // The number of standard hours it takes for this planet to complete a single rotation on its axis.
+  orbital_period: string // The number of standard days it takes for this planet to complete a single orbit of its local star.
+  gravity: string // A number denoting the gravity of this planet, where "1" is normal or 1 standard G. "2" is twice or 2 standard Gs. "0.5" is half or 0.5 standard Gs.
+  population: string // The average population of sentient beings inhabiting this planet.
+  climate: string // The climate of this planet. Comma separated if diverse.
+  terrain: string // The terrain of this planet. Comma separated if diverse.
+  surface_water: string // The percentage of the planet surface that is naturally occurring water or bodies of water.
+  url: string // the hypermedia URL of this resource.
+  created: string // the ISO 8601 date format of the time that this resource was created.
+  edited: string // the ISO 8601 date format of the time that this resource was edited.
+}
 
 // parser Function
 export function parseList(data : any) : List<unknown> {
@@ -96,5 +110,19 @@ export function parseSpeciesList(data : any) : List<species>{
   return{
     ...parseList(data),
     results: (data.results || []).map((data : any) => parseSpecies(data)),
+  }
+}
+
+//planet
+export function parsePlanet(data : any) : planet {
+  return{
+    ...parseResult(data),
+  };
+}
+
+export function parsePlanetsList(data : any) : List<planet>{
+  return{
+    ...parseList(data),
+    results: (data.results || []).map((data : any) => parsePlanet(data)),
   }
 }

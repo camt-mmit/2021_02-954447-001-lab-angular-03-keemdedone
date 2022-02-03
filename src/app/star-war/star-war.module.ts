@@ -12,6 +12,10 @@ import { StarWarSpeciesListComponent } from './star-war-species-list/star-war-sp
 import { StarWarSpeciesListPageComponent } from './star-war-species-list-page/star-war-species-list-page.component';
 import { StarWarSpeciesViewComponent } from './star-war-species-view/star-war-species-view.component';
 import { StarWarSpeciesViewPageComponent } from './star-war-species-view-page/star-war-species-view-page.component';
+import { StarWarPlanetsListComponent } from './star-war-planets-list/star-war-planets-list.component';
+import { StarWarPlanetsListPageComponent } from './star-war-planets-list-page/star-war-planets-list-page.component';
+import { StarWarPlanetViewComponent } from './star-war-planet-view/star-war-planet-view.component';
+import { StarWarPlanetViewPageComponent } from './star-war-planet-view-page/star-war-planet-view-page.component';
 
 
 @NgModule({
@@ -24,7 +28,11 @@ import { StarWarSpeciesViewPageComponent } from './star-war-species-view-page/st
     StarWarSpeciesListComponent,
     StarWarSpeciesListPageComponent,
     StarWarSpeciesViewComponent,
-    StarWarSpeciesViewPageComponent
+    StarWarSpeciesViewPageComponent,
+    StarWarPlanetsListComponent,
+    StarWarPlanetsListPageComponent,
+    StarWarPlanetViewComponent,
+    StarWarPlanetViewPageComponent
   ],
   imports: [
     CommonModule,

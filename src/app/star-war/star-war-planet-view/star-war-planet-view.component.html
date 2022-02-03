@@ -1,0 +1,34 @@
+<div *ngIf="data; else loading" class="cmp-container">
+  <div>
+    <label>Name: {{data.name}}</label>
+  </div>
+  <div>
+    <label>Rotation period: {{data.rotation_period}}</label>
+  </div>
+  <div>
+    <label>Orbital period: {{data.orbital_period}}</label>
+  </div>
+  <div>
+    <label>Diameter: {{data.diameter}}</label>
+  </div>
+  <div>
+    <label>Climate: {{data.climate}}</label>
+  </div>
+  <div>
+    <label>Gravity: {{data.gravity}}</label>
+  </div>
+  <div>
+    <label>Terrain: {{data.terrain}}</label>
+  </div>
+  <div>
+    <label>Surface water: {{data.surface_water}}</label>
+  </div>
+  <div>
+    <label>Population: {{data.population}}</label>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div>loading...</div>
+</ng-template>
+
