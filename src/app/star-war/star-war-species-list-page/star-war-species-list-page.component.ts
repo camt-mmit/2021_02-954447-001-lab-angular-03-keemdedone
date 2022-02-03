@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable,switchMap } from 'rxjs';
-import { person,List, SearchData } from '../models';
-import { StarWarPeopleService } from '../star-war-people.service';
+import { species,List, SearchData } from '../models';
+import { StarWarSpeciesService } from '../star-war-species.service';
 
 @Component({
-  selector: 'app-star-war-people-list-page',
-  templateUrl: './star-war-people-list-page.component.html',
-  styleUrls: ['./star-war-people-list-page.component.scss']
+  selector: 'app-star-war-species-list-page',
+  templateUrl: './star-war-species-list-page.component.html',
+  styleUrls: ['./star-war-species-list-page.component.scss']
 })
-export class StarWarPeopleListPageComponent implements OnInit {
-  data$!: Observable<List<person>>; // $ can type or not type, that unnecessary.
+export class StarWarSpeciesListPageComponent implements OnInit {
+  data$!: Observable<List<species>>;
   search!: SearchData;
 
   constructor(
-    private readonly service: StarWarPeopleService,
+    private readonly service: StarWarSpeciesService,
     private readonly route: ActivatedRoute,
     private readonly router: Router,
   ) { }

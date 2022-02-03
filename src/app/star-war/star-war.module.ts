@@ -8,6 +8,10 @@ import { StarWarPeopleListPageComponent } from './star-war-people-list-page/star
 import { ReactiveFormsModule } from '@angular/forms';
 import { StarWarPersonViewComponent } from './star-war-person-view/star-war-person-view.component';
 import { StarWarPersonViewPageComponent } from './star-war-person-view-page/star-war-person-view-page.component';
+import { StarWarSpeciesListComponent } from './star-war-species-list/star-war-species-list.component';
+import { StarWarSpeciesListPageComponent } from './star-war-species-list-page/star-war-species-list-page.component';
+import { StarWarSpeciesViewComponent } from './star-war-species-view/star-war-species-view.component';
+import { StarWarSpeciesViewPageComponent } from './star-war-species-view-page/star-war-species-view-page.component';
 
 
 @NgModule({
@@ -16,7 +20,11 @@ import { StarWarPersonViewPageComponent } from './star-war-person-view-page/star
     StarWarPeopleListComponent,
     StarWarPeopleListPageComponent,
     StarWarPersonViewComponent,
-    StarWarPersonViewPageComponent
+    StarWarPersonViewPageComponent,
+    StarWarSpeciesListComponent,
+    StarWarSpeciesListPageComponent,
+    StarWarSpeciesViewComponent,
+    StarWarSpeciesViewPageComponent
   ],
   imports: [
     CommonModule,
