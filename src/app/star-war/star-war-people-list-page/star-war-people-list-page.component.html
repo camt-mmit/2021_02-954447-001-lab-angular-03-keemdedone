@@ -1,1 +1,5 @@
-<app-star-war-people-list [data]=" data$ | async " ></app-star-war-people-list>
+<app-star-war-people-list
+[data]=" data$ | async "
+[search]="search"
+(searchChange)="onSearch($event)"
+(itemSelect)="onItemSelect($event)"></app-star-war-people-list>

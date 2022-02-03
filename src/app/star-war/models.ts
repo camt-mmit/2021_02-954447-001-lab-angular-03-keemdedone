@@ -1,3 +1,9 @@
+
+export type SearchData = {
+  search?: string,
+  page?: string,
+};
+
 export type List<X> = {
   count: number;
   previous: string | null ;

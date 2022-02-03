@@ -10,6 +10,7 @@ export class StarWarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    return;
   }
 
 }
