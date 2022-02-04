@@ -91,6 +91,7 @@ input[type="number"]{
     font-size: 18px;
   }
 }
+//End example CSS
 
 //Sample CSS
 .cmp-simple-form{
@@ -132,3 +133,84 @@ input[type="number"]{
     }
   }
 }
+//End Sample CSS
+
+//StarWar CSS
+.cmp-star-war-container{
+  &>.cmp-search-box{
+    margin-bottom: 1ch;
+
+    &>input {
+      box-sizing: border-box;
+      width: 15%;
+      text-align: center;
+    }
+    &>::-webkit-input-placeholder{
+       color: gray;
+       text-align: center;
+
+    }
+    &>:-moz-placeholder{
+       color: gray;
+       text-align: center;
+    }
+  }
+  &>.cmp-item{
+    &>.cmp-item-list{
+      margin-bottom: 0.75ch;
+      margin-left: 40%;
+      margin-right: 40%;
+      &>label{
+        cursor: pointer;
+      }
+    }
+    &>.cmp-paginator{
+      &>button{
+        cursor: pointer;
+        border-color: red;
+        background-color: transparent;
+        &>.material-icons{
+          color: red;
+        }
+      }
+      &>button:disabled{
+        cursor:not-allowed;
+        border-color: gray;
+        &>.material-icons{
+          color: gray;
+        }
+      }
+    }
+  }
+}
+
+//Loading animation
+.loading-animation{
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid blue;
+  border-radius: 45%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  margin-top: 10%;
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+}
+// end loading animation
+
+.cmd-back-button{
+  margin-top: 2ch;
+  background-color: transparent;
+  cursor: pointer;
+  border: transparent;
+  &>.material-icons{
+    color: blue;
+  }
+}
+
+//End Starwar CSS
