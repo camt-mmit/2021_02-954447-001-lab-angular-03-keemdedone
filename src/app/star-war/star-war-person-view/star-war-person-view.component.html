@@ -1,19 +1,24 @@
-<div *ngIf="data; else loading" class="cmp-container">
-  <div>
-    <label>Name: {{data.name}}</label>
-  </div>
-  <div>
-    <label>Gender: {{data.gender}}</label>
-  </div>
-  <div>
-    <label>Birth Year: {{data.birth_year}}</label>
-  </div>
-  <div>
-    <label>Height: {{data.height | number:'1.2-2'}} cm </label>
-  </div>
-  <div>
-    <label>Mass: {{data.mass | number:'1.2-2'}} kg </label>
-  </div>
+<div *ngIf="data; else loading" class="cmp-view-container">
+  <p>
+    <b>Name</b>
+    {{data.name}}
+  </p>
+  <p>
+    <b>Gender</b>
+    {{data.gender}}
+  </p>
+  <p>
+    <b>Birth Year</b>
+    {{data.birth_year}}
+  </p>
+  <p>
+    <b>Height</b>
+    {{data.height | number:'1.2-2'}} cm.
+  </p>
+  <p>
+    <b>Mass</b>
+    {{data.mass | number:'1.2-2'}} kg.
+  </p>
 </div>
 
 <ng-template #loading>

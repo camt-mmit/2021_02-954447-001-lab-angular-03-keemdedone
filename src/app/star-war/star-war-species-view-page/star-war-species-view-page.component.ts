@@ -14,8 +14,7 @@ export class StarWarSpeciesViewPageComponent implements OnInit {
   constructor(
     private readonly service: StarWarSpeciesService,
     private readonly route: ActivatedRoute,
-
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.data$ = this.route.params.pipe(

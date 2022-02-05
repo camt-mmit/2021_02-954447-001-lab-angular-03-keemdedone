@@ -1,31 +1,40 @@
-<div *ngIf="data; else loading" class="cmp-container">
-  <div>
-    <label>Name: {{data.name}}</label>
-  </div>
-  <div>
-    <label>Rotation period: {{data.rotation_period}}</label>
-  </div>
-  <div>
-    <label>Orbital period: {{data.orbital_period}}</label>
-  </div>
-  <div>
-    <label>Diameter: {{data.diameter}}</label>
-  </div>
-  <div>
-    <label>Climate: {{data.climate}}</label>
-  </div>
-  <div>
-    <label>Gravity: {{data.gravity}}</label>
-  </div>
-  <div>
-    <label>Terrain: {{data.terrain}}</label>
-  </div>
-  <div>
-    <label>Surface water: {{data.surface_water}}</label>
-  </div>
-  <div>
-    <label>Population: {{data.population}}</label>
-  </div>
+<div *ngIf="data; else loading" class="cmp-view-container">
+  <p>
+    <b>Name</b>
+    {{data.name}}
+  </p>
+  <p>
+    <b>Rotation period</b>
+    {{data.rotation_period}}
+  </p>
+  <p>
+    <b>Orbital period</b>
+    {{data.orbital_period}}
+  </p>
+  <p>
+    <b>Diameter</b>
+    {{data.diameter}}
+  </p>
+  <p>
+    <b>Climate</b>
+    {{data.climate}}
+  </p>
+  <p>
+    <b>Gravity</b>
+    {{data.gravity}}
+  </p>
+  <p>
+    <b>Terrain</b>
+    {{data.terrain}}
+  </p>
+  <p>
+    <b>Surface water</b>
+    {{data.surface_water}}
+  </p>
+  <p>
+    <b>Population</b>
+    {{data.population}}
+  </p>
 </div>
 
 <ng-template #loading>
