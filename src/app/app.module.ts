@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http'; // import to appModule 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GoogleConfigurationToken } from './google/models';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,12 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: GoogleConfigurationToken,
+      useValue: environment.googleConfiguration,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
