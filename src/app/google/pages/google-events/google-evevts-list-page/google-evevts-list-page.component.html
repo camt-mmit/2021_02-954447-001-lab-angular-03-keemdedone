@@ -1,8 +1,13 @@
 <div *ngIf="data$ | async as data; else loading">
-  <code>{{ data | json }}</code>
+    <p>
+      <b>Login by</b>
+      <code> {{ data.summary }} </code>
+    </p>
 </div>
 
 <ng-template #loading>
-  <div class="loading-animation"></div>
-  <p class="loading-txt">Loading...</p>
+  <svg class="spinner" viewBox="0 0 50 50">
+    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="7.5"></circle>
+  </svg>
 </ng-template>
+
