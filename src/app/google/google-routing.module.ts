@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GoogleAuthorizationPageComponent } from './pages/google-authorization-page/google-authorization-page.component';
+import { GoogleEventCreatePageComponent } from './pages/google-events/google-event-create-page/google-event-create-page.component';
 import { GoogleEvevtsListPageComponent } from './pages/google-events/google-evevts-list-page/google-evevts-list-page.component';
 import { GoogleComponent } from './pages/google/google.component';
 
@@ -22,6 +23,10 @@ const routes: Routes = [
         path: 'events',
         component: GoogleEvevtsListPageComponent,
       },
+      {
+        path:'events/create',
+        component: GoogleEventCreatePageComponent,
+      }
     ],
   },
 ];

@@ -22,9 +22,11 @@ import { arrayBufferToBase64URLencode, randomString, sha256 } from './utils';
 
 const tokenKeyName = 'google-token';
 const codeKeyName = 'google-code-verifier';
+const securityKeyName = 'google-security-token';
 const authUrl = 'https://accounts.google.com/o/oauth2/v2/auth';
 const codeUrl = 'https://oauth2.googleapis.com/token';
 const randomStringLength = 56;
+const securityTokenLength =  16;
 
 @Injectable({
   providedIn: 'root',
@@ -118,6 +120,10 @@ export class GoogleTokenService {
   getAuthorizationLink(): Observable<string> {
     return this.codeChallenge$.pipe(
       map((codeChallenge) => {
+        const security_token = randomString(securityTokenLength);
+        localStorage.setItem(codeKeyName, this.codeVerifier);
+        localStorage.setItem(securityKeyName, security_token);
+
         const url = new URL(authUrl);
 
         url.searchParams.append('client_id', this.configuration.client_id);
@@ -129,11 +135,12 @@ export class GoogleTokenService {
         const scopeText = this.configuration.scopes.join(' ');
 
         url.searchParams.append('scope', scopeText);
-        url.searchParams.append('code_challenge', '');
+        url.searchParams.append('code_challenge', codeChallenge);
         url.searchParams.append('code_challenge_method', 'S256');
 
         const stateParams = new URLSearchParams();
         stateParams.append('internal_redirect_uri', this.router.url);
+        stateParams.append('security_token',security_token)
         url.searchParams.append('state', stateParams.toString());
 
         /*
@@ -147,8 +154,12 @@ export class GoogleTokenService {
       }),
     );
   }
-  requestAccessToken(code: string): Observable<boolean> {
-    return this.http
+
+  requestAccessToken(code: string, securityToken: string | null): Observable<boolean> {
+    const storedSecurityToken = localStorage.getItem(securityKeyName);
+
+    if(storedSecurityToken && (storedSecurityToken === securityToken )){
+      return this.http
       .post<TokenData>(codeUrl, {
         client_id: this.configuration.client_id,
         client_secret: this.configuration.client_secret,
@@ -162,9 +173,11 @@ export class GoogleTokenService {
           console.error(err);
           return of(null);
         }),
-        map((tokenData) => this.setTokenData(tokenData)),
+        switchMap((tokenData) => this.setTokenData(tokenData)),
         map((result) => !!result),
       );
+    }
+    return of(false);
   }
 
   getAccessToken(): Observable<string | null> {
@@ -181,6 +194,7 @@ export class GoogleTokenService {
 
     return of(null);
   }
+
   getAuthorizationHeader(): Observable<string | null> {
     return this.getAccessToken().pipe(
       map((accessToken) =>

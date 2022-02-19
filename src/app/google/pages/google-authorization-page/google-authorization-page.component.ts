@@ -18,16 +18,17 @@ export class GoogleAuthorizationPageComponent implements OnInit {
 
   ngOnInit(): void {
     const queryString = this.route.snapshot.queryParams;
+    const state = new URLSearchParams(queryString['state']);
+
     if(queryString['error']){
       this.errorMsg = queryString['error']
     } else if(queryString['code']){
-      this.tokenService.requestAccessToken(queryString['code']).subscribe(
+      this.tokenService.requestAccessToken(queryString['code'],state.get('security_token')).subscribe(
         (result)=>{
           if(result){
-            const state = new URLSearchParams(queryString['state']);
             this.router.navigateByUrl(state.get('internal_redirect_uri')!);
           } else {
-            this.errorMsg = 'Unknow Error!!!'
+            this.errorMsg = 'Unknow Error!!!';
           }
         }
       )

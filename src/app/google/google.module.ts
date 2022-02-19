@@ -5,17 +5,21 @@ import { GoogleRoutingModule } from './google-routing.module';
 import { GoogleEvevtsListPageComponent } from './pages/google-events/google-evevts-list-page/google-evevts-list-page.component';
 import { GoogleComponent } from './pages/google/google.component';
 import { GoogleAuthorizationPageComponent } from './pages/google-authorization-page/google-authorization-page.component';
+import { GoogleUiModule } from './google-ui.module';
+import { GoogleEventCreatePageComponent } from './pages/google-events/google-event-create-page/google-event-create-page.component';
 
 
 @NgModule({
   declarations: [
-    GoogleEvevtsListPageComponent,
     GoogleComponent,
-    GoogleAuthorizationPageComponent
+    GoogleEvevtsListPageComponent,
+    GoogleAuthorizationPageComponent,
+    GoogleEventCreatePageComponent
   ],
   imports: [
     CommonModule,
-    GoogleRoutingModule
+    GoogleRoutingModule,
+    GoogleUiModule,
   ]
 })
 export class GoogleModule { }

@@ -1,0 +1,17 @@
+<div *ngIf="data; else loading">
+  <a *ngFor="let item of data.items" [href]="item.htmlLink" target="_blank" class="item-list">
+    <h4>
+      {{ item.summary }}
+    </h4>
+    <small>
+      {{ item.start.dateTime }} - {{ item.end.dateTime }}
+    </small>
+  </a>
+</div>
+
+<ng-template #loading>
+  <svg class="loading-spinner" viewBox="0 0 50 50">
+    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="7.5"></circle>
+  </svg>
+</ng-template>
+
