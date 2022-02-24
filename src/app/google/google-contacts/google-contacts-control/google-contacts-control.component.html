@@ -1,0 +1,14 @@
+<ng-container [formGroup]="formGroup">
+  <p>
+    <b>Name</b><input type="text" formControlName="names" (blur)="onTouched()">
+  </p>
+  <p>
+    <b>Family Name</b><input type="text" formControlName="" (blur)="onTouched()">
+  </p>
+  <p>
+    <b>Email</b><input type="text" formControlName="emailAddresses" (blur)="onTouched()">
+  </p>
+  <p>
+    <b>Phone</b><input type="text" formControlName="phoneNumbers" (blur)="onTouched()">
+  </p>
+</ng-container>

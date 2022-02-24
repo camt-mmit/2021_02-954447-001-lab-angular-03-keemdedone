@@ -168,7 +168,7 @@ export type Eventlist = {
   "items": [
     EventResource
   ]
-}
+};
 
 /**
  *

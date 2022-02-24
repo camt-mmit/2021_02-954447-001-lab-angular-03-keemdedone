@@ -6,6 +6,9 @@ export const environment = {
     scopes: [
       'https://www.googleapis.com/auth/calendar',
       'https://www.googleapis.com/auth/contacts',
+      'https://www.googleapis.com/auth/drive',
+      'https://www.googleapis.com/auth/drive.file',
+      'https://www.googleapis.com/auth/spreadsheets',
     ],
     redirect_uri:
       'https://camt-mmit.github.io/2021_02-954447-001-lab-angular-03-keemdedone/google/authorization',

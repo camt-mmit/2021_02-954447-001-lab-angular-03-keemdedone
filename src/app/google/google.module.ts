@@ -7,6 +7,8 @@ import { GoogleComponent } from './pages/google/google.component';
 import { GoogleAuthorizationPageComponent } from './pages/google-authorization-page/google-authorization-page.component';
 import { GoogleUiModule } from './google-ui.module';
 import { GoogleEventCreatePageComponent } from './pages/google-events/google-event-create-page/google-event-create-page.component';
+import { GoogleContactsListPageComponent } from './pages/google-contacts/google-contacts-list-page/google-contacts-list-page.component';
+import { GoogleContactCreatePageComponent } from './pages/google-contacts/google-contact-create-page/google-contact-create-page.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { GoogleEventCreatePageComponent } from './pages/google-events/google-eve
     GoogleComponent,
     GoogleEvevtsListPageComponent,
     GoogleAuthorizationPageComponent,
-    GoogleEventCreatePageComponent
+    GoogleEventCreatePageComponent,
+    GoogleContactsListPageComponent,
+    GoogleContactCreatePageComponent
   ],
   imports: [
     CommonModule,

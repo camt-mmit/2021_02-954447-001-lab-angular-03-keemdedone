@@ -1,28 +1,28 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { EventResource } from '../../models';
+import { Person } from '../../models';
 
 @Component({
-  selector: 'app-google-event-form',
-  templateUrl: './google-event-form.component.html',
-  styleUrls: ['./google-event-form.component.scss']
+  selector: 'app-google-contacts-form',
+  templateUrl: './google-contacts-form.component.html',
+  styleUrls: ['./google-contacts-form.component.scss']
 })
-export class GoogleEventFormComponent implements OnInit {
-  @Input() data: EventResource | null = null;
+export class GoogleContactsFormComponent implements OnInit {
+  @Input() data: Person | null = null;
 
-  @Output() dataChange = new EventEmitter<EventResource>();
+  @Output() dataChange = new EventEmitter<Person>();
   @Output() cancel = new EventEmitter<void>();
 
   errorMsg: string | null = null;
-  formGroup! : FormGroup;
+  formGroup! : FormGroup
 
   constructor(
-    private readonly fb: FormBuilder
+    private readonly fb:FormBuilder
   ) {}
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
-      eventResource : [this.data, [Validators.required]],
+      person : [this.data, [Validators.required]],
     });
   }
 
@@ -31,7 +31,7 @@ export class GoogleEventFormComponent implements OnInit {
     if(this.formGroup.invalid){
       this.errorMsg = 'Invalid form data!!!'
     } else {
-      const control = this.formGroup.get('eventResource')!;
+      const control = this.formGroup.get('person')!;
       this.dataChange.emit(control.value)
     }
   }

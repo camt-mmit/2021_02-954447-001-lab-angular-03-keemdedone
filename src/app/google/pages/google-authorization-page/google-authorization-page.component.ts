@@ -8,13 +8,13 @@ import { GoogleTokenService } from '../../google-token.service';
   styleUrls: ['./google-authorization-page.component.scss']
 })
 export class GoogleAuthorizationPageComponent implements OnInit {
-  errorMsg: string |null = null;
+  errorMsg: string | null = null;
 
   constructor(
     private readonly tokenService: GoogleTokenService,
     private readonly route: ActivatedRoute,
     private readonly router: Router,
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     const queryString = this.route.snapshot.queryParams;
@@ -28,7 +28,7 @@ export class GoogleAuthorizationPageComponent implements OnInit {
           if(result){
             this.router.navigateByUrl(state.get('internal_redirect_uri')!);
           } else {
-            this.errorMsg = 'Unknow Error!!!';
+            this.errorMsg = 'UNKNOW ERROR !!!';
           }
         }
       )

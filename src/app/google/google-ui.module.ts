@@ -4,6 +4,9 @@ import { GoogleEventsListComponent } from './google-events/google-events-list/go
 import { GoogleEventControlComponent } from './google-events/google-event-control/google-event-control.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GoogleEventFormComponent } from './google-events/google-event-form/google-event-form.component';
+import { GoogleContactsListComponent } from './google-contacts/google-contacts-list/google-contacts-list.component';
+import { GoogleContactsControlComponent } from './google-contacts/google-contacts-control/google-contacts-control.component';
+import { GoogleContactsFormComponent } from './google-contacts/google-contacts-form/google-contacts-form.component';
 
 
 
@@ -11,7 +14,10 @@ import { GoogleEventFormComponent } from './google-events/google-event-form/goog
   declarations: [
     GoogleEventsListComponent,
     GoogleEventControlComponent,
-    GoogleEventFormComponent
+    GoogleEventFormComponent,
+    GoogleContactsListComponent,
+    GoogleContactsControlComponent,
+    GoogleContactsFormComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +26,10 @@ import { GoogleEventFormComponent } from './google-events/google-event-form/goog
   exports: [
     GoogleEventsListComponent,
     GoogleEventControlComponent,
-    GoogleEventFormComponent
+    GoogleEventFormComponent,
+    GoogleContactsListComponent,
+    GoogleContactsControlComponent,
+    GoogleContactsFormComponent
   ]
 })
 export class GoogleUiModule { }
