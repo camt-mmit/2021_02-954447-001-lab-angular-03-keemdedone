@@ -13,10 +13,11 @@ export class GoogleComponent implements OnInit {
 
   constructor(
     private readonly TokenService: GoogleTokenService
-    ) {}   
+    ) {}
 
   ngOnInit(): void {
     this.tokenReady$ = this.TokenService.tokenReady$;
     this.authorizationLinks$ = this.TokenService.getAuthorizationLink();
   }
+  
 }

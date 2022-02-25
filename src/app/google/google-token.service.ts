@@ -13,11 +13,13 @@ import {
   shareReplay,
   switchMap,
 } from 'rxjs';
+
 import {
   GoogleConfiguration,
   GoogleConfigurationToken,
   TokenData,
 } from './models';
+
 import { arrayBufferToBase64URLencode, randomString, sha256 } from './utils';
 
 const tokenKeyName = 'google-token';
@@ -31,6 +33,7 @@ const securityTokenLength =  16;
 @Injectable({
   providedIn: 'root',
 })
+
 export class GoogleTokenService {
   private readonly codeVerifier: string;
   private readonly codeChallenge$: Observable<string>;
