@@ -5,7 +5,7 @@ import { GoogleTokenService } from './google-token.service';
 import { ConnectionsList, parseConnectionsList, parsePerson, Person } from './models';
 
 const contactsUrl = 'https://people.googleapis.com/v1/people/me/connections?personFields=names,photos,emailAddresses,phoneNumbers'
-const createContactsUrl = 'https://people.googleapis.com/v1/people:createContact?personFields=biographies,birthdays,genders,names'
+const createContactsUrl = 'https://people.googleapis.com/v1/people:createContact?personFields=names'
 
  /*
   * contact API always require personFields if not it will respone error 401 code
@@ -39,15 +39,24 @@ export class GoogleContactsService {
     );
   }
 
-  create(data:Person): Observable<Person>{
+  create(data:any): Observable<Person>{
     return this.tokenService.getAuthorizationHeader().pipe(
       switchMap((authorizationHeader)=>{
         if(authorizationHeader){
-          return this.http.post(createContactsUrl,data,{
-            headers: {
-              Authorization: authorizationHeader,
+          return this.http.post(createContactsUrl,{
+              names: [{
+                givenName: data.givenName,
+                familyName: data.familyName,
+              }],
+              phoneNumbers: data.phoneNumbers,
+              emailAddresses: data.emailAddresses,
             },
-          });
+            {
+              headers: {
+                Authorization: authorizationHeader,
+              },
+            }
+          );
         }
         return of(null);
       }),map((data) => parsePerson(data)),

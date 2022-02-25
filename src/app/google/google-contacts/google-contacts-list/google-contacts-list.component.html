@@ -1,16 +1,18 @@
-<div *ngIf="data ; else loading">
+<div *ngIf="data ; else loading" class="contact-container">
   <div *ngFor="let person of data.connections" class="contact-list">
-    <div *ngFor="let pic of person.photos" class="photo">
+    <div *ngFor="let pic of person.photos" id="picture" class="picture">
       <img src= '{{ pic.url }}' >
     </div>
-    <div *ngFor="let name of person.names" class="name">
-      <b>Name</b> {{ name.displayName }}
-    </div>
-    <div *ngFor="let email of person.emailAddresses" class="email">
-      <b>Email</b> {{ email.value }}
-    </div>
-    <div *ngFor="let phone of person.phoneNumbers" class="phone">
-      <b>Phone</b> {{ phone.value }}
+    <div class="info">
+      <div *ngFor="let name of person.names" class="name">
+        <b>Name</b><span>{{ name.displayName }}</span>
+      </div>
+      <div *ngFor="let email of person.emailAddresses;let i = index" class="email">
+        <b>Email {{ i+1 }}</b><span>{{ email.value }}</span>
+      </div>
+      <div *ngFor="let phone of person.phoneNumbers;let i = index" class="phone">
+        <b>Phone {{ i+1 }}</b><span>{{ phone.value }}</span>
+      </div>
     </div>
   </div>
 </div>

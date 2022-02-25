@@ -18,7 +18,7 @@ export class GoogleContactCreatePageComponent implements OnInit {
   }
 
   onChange(data: Person): void{
-    this.service.create(data).subscribe((data) => {
+    this.service.create(data).subscribe((data:any) => {
       history.back();
     });
   }
