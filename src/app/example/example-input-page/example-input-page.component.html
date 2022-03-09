@@ -6,7 +6,7 @@
     <a>Add Section</a>
   </button>
 </div>
-<div *ngFor="let items of dataService.getData() as data ; let i = index;">
+<div *ngFor="let item of dataService.getData() as data ; let i = index;">
   <div>
     <h2>
       Section {{ i+1 }}
@@ -19,9 +19,12 @@
     </h2>
   </div>
   <app-example-section-container
-  [items]="items"
+  [items]="item"
   (update)="dataService.updateItem(i,$event.index,$event.value)"
   (add)="dataService.addItem(i)"
   (delete)="dataService.removeItem(i, $event)"></app-example-section-container>
+  <div class="section-total">
+    <b>Total >> {{totalInput(item)}}</b>
+  </div>
   <hr >
 </div>

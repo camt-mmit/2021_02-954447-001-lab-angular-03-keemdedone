@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ExampleDataService } from '../example-data.service';
+import { ExampleDataService, ExampleSection } from '../example-data.service';
 
 @Component({
   selector: 'app-example-input-page',
@@ -13,6 +13,10 @@ export class ExampleInputPageComponent implements OnInit {
 
   ngOnInit(): void {
     return;
+  }
+
+  totalInput(items:ExampleSection): number{
+    return items.reduce((carry,item)=> carry + item.value,0)
   }
 
 }
