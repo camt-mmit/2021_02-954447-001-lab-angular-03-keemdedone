@@ -8,7 +8,9 @@ import { ExampleDataService, ExampleSection } from '../example-data.service';
 })
 export class ExampleDisplayPageComponent implements OnInit {
 
-  constructor(public readonly  dataService:ExampleDataService) { }
+  constructor(
+    public readonly  dataService: ExampleDataService,
+  ) { }
 
   ngOnInit(): void {
     return;

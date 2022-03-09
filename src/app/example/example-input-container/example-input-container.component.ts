@@ -18,7 +18,6 @@ export class ExampleInputContainerComponent implements OnInit {
 
   onUpdate(value:number): void{
     this.update.emit(value);
-
   }
 
 }
