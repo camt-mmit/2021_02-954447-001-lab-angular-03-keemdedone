@@ -38,7 +38,7 @@ export class SimpleFormComponent implements OnInit {
     this.formGroup.valueChanges.pipe(
       debounceTime(1000), //delay time 1s
     ).subscribe((data) => this.update.emit(data));
-    
+
     //pipe make u can add some process between valueChanges and subscribe
 
   }

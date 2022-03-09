@@ -1,1 +1,9 @@
-
+.slibings-cmd{
+  display: flex;
+  padding-bottom: 20px;
+  &>b{
+    padding-top: 8px;
+    padding-right: 30px;
+    vertical-align: 20px;
+  }
+}

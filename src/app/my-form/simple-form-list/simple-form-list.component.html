@@ -1,0 +1,18 @@
+<div *ngIf="data !== null ; else noData">
+  <div class="person-info">
+    <p>NAME: {{data.name}}</p>
+    <p>AGE: {{data.age}}</p>
+    <p>GENDER: {{data.gender}}</p>
+    <p>ADDRESS: {{data.address}}</p>
+    <label>SLIBINGS</label>
+    <div *ngFor="let slibing of data.slibings; let i = index" class="slibings-info">
+      <p *ngIf="slibing">
+       {{i+1}}. {{slibing}}
+      </p>
+    </div>
+  </div>
+</div>
+
+<ng-template #noData>
+  <h1>No Information....</h1>
+</ng-template>
