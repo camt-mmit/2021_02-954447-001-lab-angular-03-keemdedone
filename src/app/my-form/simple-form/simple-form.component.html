@@ -1,0 +1,40 @@
+<div [formGroup]="formGroup" class="cmp-simple-form">
+  <b>Name</b>
+  <input type="text" formControlName="name">
+  <br>
+  <b>Age</b>
+  <input type="number" formControlName="age">
+  <br>
+  <b>Gender</b>
+  <select formControlName="gender" >
+    <option [value]="">--- Pls Select ---</option>
+    <option [value]="'male'">Male</option>
+    <option [value]="'female'">Female</option>
+  </select>
+  <br>
+  <b>Address</b>
+  <textarea formControlName="address"></textarea>
+  <br>
+
+  <div formArrayName="slibings" class="cmp-slibings-container">
+    <div class="slibings-cmd">
+      <b>
+        Slibings
+      </b>
+      <button type="button" (click)="addSlibing()">
+        <i class="material-icons">
+          add
+        </i>
+      </button>
+    </div>
+    <div *ngFor="let slibing of slibings.controls; let i = index;" class="cmp-slibings-box">
+      <b>{{ i + 1 }}</b><input type="text" [formControlName]="i">
+      <button type="button" (click)="deleteSlibing(i)">
+        <i class="material-icons">
+          delete
+        </i>
+      </button>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" type="text/css" href="//use.fontawesome.com/releases/v5.7.2/css/all.css">
+</head>
+<body>
+  <h2>Google</h2>
+  <nav class="cmp-nav">
+    <ul>
+      <li><a routerLink="./events" routerLinkActive="st-active">Events</a></li>
+      <li><a routerLink="./contacts" routerLinkActive="st-active">Contacts</a></li>
+    </ul>
+  </nav>
+  <ng-container [ngSwitch]="tokenReady$ | async">
+    <div *ngSwitchCase="false">
+      <a [href]="authorizationLinks$ | async">Login Google</a>
+    </div>
+    <router-outlet *ngSwitchCase="true"></router-outlet>
+  </ng-container>
+</body>
+</html>

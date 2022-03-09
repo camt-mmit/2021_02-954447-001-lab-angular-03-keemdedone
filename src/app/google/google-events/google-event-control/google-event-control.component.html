@@ -1,0 +1,20 @@
+<ng-container [formGroup]="formGroup">
+  <label>
+    <b>Summary</b>
+    <input type="text" formControlName="summary" (blur)="onTouched()">
+  </label>
+
+  <div>
+    <label>
+      <b>Time Range</b>
+        <ng-container formGroupName="start">
+          <input type="datetime-local" formControlName="dateTime" (blur)="onTouched()">
+          <label>To</label>
+        </ng-container>
+        <ng-container formGroupName="end">
+          <input id="to-datetime" type="datetime-local" formControlName="dateTime" (blur)="onTouched()">
+        </ng-container>
+    </label>
+  </div>
+</ng-container>
+

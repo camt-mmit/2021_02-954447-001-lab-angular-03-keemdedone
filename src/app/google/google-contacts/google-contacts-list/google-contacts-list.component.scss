@@ -1,0 +1,49 @@
+.contact-container{
+  margin: 2em 0em 5em 0em;
+  &>.contact-list{
+    height: 150px;
+    display: grid;
+    grid-template: 80px / 110px auto auto;
+    padding: 0px 30% 0px 40%;
+    text-align: left;
+    &>.info{
+      font-family: 'Times New Roman', Times, serif;
+      &>.name{
+        &>b{
+          padding-right: 10px;
+        }
+        &>b::after{
+          padding-left: 1ch;
+          content: ":";
+          font-family: monospace;
+          font-size: 16px;
+        }
+      }
+      &>.email{
+        padding-top: 5px;
+        &>b{
+          padding-right: 10px;
+        }
+        &>b::after{
+          padding-left: 1ch;
+          content: ":";
+          font-family: monospace;
+          font-size: 16px;
+        }
+      }
+      &>.phone{
+        padding-top: 5px;
+        &>b{
+          padding-right: 10px;
+        }
+        &>b::after{
+          padding-left: 1ch;
+          content: ":";
+          font-family: monospace;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+

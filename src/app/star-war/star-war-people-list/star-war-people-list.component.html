@@ -1,0 +1,28 @@
+<div *ngIf="data; else loading" class="cmp-star-war-container"> <!-- check data null or not -->
+  <form class="cmp-search-box" [formGroup]="formGroup" (ngSubmit)="onSearch()">
+      <input type="search" formControlName="search" placeholder=" Search Here " class="search-box">
+  </form>
+  <div class="cmp-item">
+    <div  class="cmp-item-list" *ngFor="let item of data.results; let i = index" (click)="onItemClick(item.url)">
+      <label>{{ item.name }}</label>
+    </div>
+    <div class="cmp-paginator">
+      <button type="button" [disabled]="data.previous === null" (click)="changePage(data.previous!)">
+        <i class="material-icons">
+          arrow_left
+        </i>
+      </button>
+      <button type="button" [disabled]="data.next === null" (click)="changePage(data.next!)">
+        <i class="material-icons">
+          arrow_right
+        </i>
+      </button>
+      <p>Total <b>{{ data.count }}</b> results.</p>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="loading-animation"></div>
+  <p class="loading-txt">Loading...</p>
+</ng-template>

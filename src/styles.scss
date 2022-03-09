@@ -1,1 +1,304 @@
 /* You can add global styles to this file, and also import other style files */
+
+html{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+//main  CSS
+.cmp-nav{
+  display: block;
+
+  &>ul{
+    display: block;
+    list-style: none;
+    margin-right: 5ch;
+    &>li{
+      display: inline-block;
+      padding: 4px 10px 4px 10px;
+      &>a{
+        color: blue;
+        text-decoration: none;
+        font-size: 20px;
+      }
+      &>a:hover{
+        color: black;
+        text-decoration: underline;
+      }
+      &>a:active{
+        color: red;
+      }
+      &>a::selection{
+        color: red;
+      }
+      .st-active{
+        color: red;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+//example CSS
+.example-button-del{
+  margin-left: 2ch;
+  &>i{
+    vertical-align: -0.18ch;
+    color: red;
+  }
+  &>a{
+    font-size: 20px;
+  }
+}
+.example-button-add{
+  &>i{
+    vertical-align: -0.18ch;
+    color: blue;
+  }
+  &>a{
+    font-size: 20px;
+  }
+}
+
+.input-container>b::after{
+  content: " >> ";
+  color: blue;
+  font-style: bold;
+  padding: 0ch 1.5ch 0ch 1ch;
+}
+
+input[type="number"]{
+  font-family: monospace;
+}
+
+.input-display{
+  &>a{
+    text-decoration: none;
+    font-size: 20px;
+  }
+  &>a::after{
+    content: " = ";
+    font-style: bold;
+    font-size: 20;
+    color: red;
+  }
+  &>span{
+    font-family: monospace;
+    font-size: 22px;
+  }
+  &>b{
+    font-size: 18px;
+  }
+}
+//End example CSS
+
+//Sample CSS
+.cmp-simple-form{
+  margin-left: 35%;
+  display: grid;
+  grid-template-columns: 8ch 10cm 1fr;
+  &>select{
+    text-align-last:center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    font-weight: bold;
+  }
+  &>.cmp-slibings-container{
+    display: table;
+    padding: 1em 0em 0em 0em;
+    &>b{
+      vertical-align: 0.4em;
+    }
+    &>button{
+      margin-bottom: 1em;
+      &>i{
+        color: blue;
+      }
+    }
+    &>.cmp-slibings-box{
+
+      &>b{
+        margin: 0.5em 0em 0em 0em;
+      }
+      &>button{
+        color: red;
+      }
+      &>button:disabled{
+        color: gray;
+      }
+      padding-left: 5ch;
+      display: grid;
+      grid-template-columns: 3ch 10cm 5ch;
+    }
+  }
+}
+//End Sample CSS
+
+//StarWar CSS
+.cmp-star-war-container{
+  &>.cmp-search-box{
+    margin-bottom: 1ch;
+
+    &>input {
+      box-sizing: border-box;
+      width: 15%;
+      text-align: center;
+    }
+    &>::-webkit-input-placeholder{
+       color: gray;
+       text-align: center;
+
+    }
+    &>:-moz-placeholder{
+       color: gray;
+       text-align: center;
+    }
+  }
+  &>.cmp-item{
+    &>.cmp-item-list{
+      margin-bottom: 0.75ch;
+      margin-left: 46.5%;
+      margin-right: 30%;
+      text-align: left;
+      &>label{
+        cursor: pointer;
+      }
+      &>label::before{
+        font-family: "Font Awesome 5 Free";
+        content: "\f105";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-weight: 900;
+        color: greenyellow;
+      }
+      &>label:hover{
+        text-decoration: underline;
+        font-weight: bold;
+      }
+      &>label:active{
+        color: red;
+      }
+    }
+    &>.cmp-paginator{
+      &>button{
+        cursor: pointer;
+        border-color: red;
+        background-color: transparent;
+        &>.material-icons{
+          color: red;
+        }
+      }
+      &>button:disabled{
+        cursor:not-allowed;
+        border-color: gray;
+        &>.material-icons{
+          color: gray;
+        }
+      }
+    }
+  }
+}
+
+//Loading animation
+.loading-txt{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.5cm;
+  font-weight: 900;
+  padding-left: 1%;
+}
+
+.loading-animation{
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid blue;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  margin-top: 5%;
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+}
+
+.loading-spinner {
+  animation: rotate 2s linear infinite;
+  z-index: 2;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  width: 50px;
+  height: 50px;
+
+  &>.path {
+    stroke: blue;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+}
+// end loading animation
+
+.cmd-back-button{
+  margin-top: 2ch;
+  background-color: transparent;
+  cursor: pointer;
+  border: transparent;
+  &>.material-icons{
+    color: blue;
+  }
+}
+
+.cmp-view-container{
+  cursor:crosshair;
+  margin: 0% 20% 0% 45%;
+  padding-top: 2em;
+  &>p{
+    text-align: left;
+    margin-top: -1em;
+    &>a{
+      text-decoration: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1.1em;
+    }
+    &>a:hover{
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    &>b::after{
+      content: " :: ";
+      font-family: monospace;
+      font-size: 4mm;
+      vertical-align: 0.12em;
+    }
+  }
+
+}
+
+//End Starwar CSS
